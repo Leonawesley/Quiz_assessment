@@ -91,10 +91,7 @@ choice.addEventListener("click",function(event){
         }
         else{
             document.querySelector("#answers").textContent = "Wrong answer";
-            if(timer > 10){
-                timer = timer - 10;
-
-            }
+            timer = timer - 10;
         }
     }
     showQuestion();

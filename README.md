@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is used for quiz assessment and show their scores. The scores are manipulated based on time. 
+This project is used for quiz assessment and show their scores. The scores are manipulated based on time and result will be displayed in a webpage. 
 
 ## Project Details
 In this application user will be given set of questions and four options for each question. One of the options are correct. When user start the click the start quiz button the timer starts and first question will appear on the screen. If the user choose the correct answer no penalty is given. If they choose the wrong answer five seconds will be deduced. The final score is based on the amonut of time left. When time reaches zero the quiz will end. User is given an option to save their highscore and initials.

@@ -40,7 +40,7 @@ let myQuestions = [
         correctAnswer:2
     }];
 
-//For countdown
+//For timer countdown
 let timer = 60;
 let intervalId;
 startButton.addEventListener("click",function(event){
@@ -49,7 +49,7 @@ startButton.addEventListener("click",function(event){
         timeCount.textContent = timer;
         timer--;
         if(timer < 0){
-            clearInterval(intervalId);
+            window.clearInterval(intervalId);
         }
     },1000)
     questionsList.setAttribute("class","start");
@@ -62,7 +62,6 @@ function showQuestion(){
     if(currentQuestion <= myQuestions.length){
         console.log(currentQuestion);
         choice.innerHTML = "";
-        //document.querySelector("#answers").textContent = "";
         questionSpace.textContent = "";
         questionSpace.textContent = myQuestions[currentQuestion-1].question;
         for (let i = 0; i < myQuestions[currentQuestion-1].answers.length; i++) {
@@ -92,8 +91,10 @@ choice.addEventListener("click",function(event){
         }
         else{
             document.querySelector("#answers").textContent = "Wrong answer";
-            timer = timer - 10;
-           
+            if(timer > 10){
+                timer = timer - 10;
+
+            }
         }
     }
     showQuestion();
@@ -107,7 +108,7 @@ choice.addEventListener("click",function(event){
         initials : initial,
         score : timer
        }
-       console.log(initial);
+       console.log(timer);
        localStorage.setItem("objectToPass", JSON.stringify(values));
        window.location.href = "./highscores.html";
 

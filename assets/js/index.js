@@ -76,9 +76,6 @@ function showQuestion(){
     if(currentQuestion > myQuestions.length){
         endScreen.setAttribute("class","start");
         questionsList.setAttribute("class","hide");
-        // choice.innerHTML = "";
-        // document.querySelector("#answers").textContent = "";
-        // questionSpace.textContent = "";
         clearInterval(intervalId);
     }
     currentQuestion++;
@@ -100,10 +97,9 @@ choice.addEventListener("click",function(event){
         }
     }
     showQuestion();
-    //console.log(event);
    });
 
-   //To get initials from the form
+   //To get initials from the form and send it to score.js 
    submitBtn.addEventListener("click",function(event){
     event.preventDefault();
        let initial = document.querySelector("#initials").value;
@@ -113,7 +109,7 @@ choice.addEventListener("click",function(event){
        }
        console.log(initial);
        localStorage.setItem("objectToPass", JSON.stringify(values));
-       window.location.href = "./highscores.html"
+       window.location.href = "./highscores.html";
 
    })
    

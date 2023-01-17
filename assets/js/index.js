@@ -104,9 +104,16 @@ choice.addEventListener("click",function(event){
    });
 
    //To get initials from the form
-   submitBtn.addEventListener("click",function(){
-       let initial = document.getElementById("#initials").value;
+   submitBtn.addEventListener("click",function(event){
+    event.preventDefault();
+       let initial = document.querySelector("#initials").value;
+       let values = {
+        initials : initial,
+        score : timer
+       }
        console.log(initial);
+       localStorage.setItem("objectToPass", JSON.stringify(values));
+       window.location.href = "./highscores.html"
 
    })
    
